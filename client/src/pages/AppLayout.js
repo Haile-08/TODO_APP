@@ -2,6 +2,8 @@ import Searchbar from "../components/search/searchbar";
 import Items from "../components/items/items";
 import "../css/App.css";
 
+import React from "react";
+
 function AppLayout() {
   return (
     <div className="layout">

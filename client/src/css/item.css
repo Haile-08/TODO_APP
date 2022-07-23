@@ -1,0 +1,46 @@
+.container {
+    background-color: #2c323d;
+    width: 400px;
+    height: 120px;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    transition:background-color 0.3s ease-out ;
+}
+.container:hover{
+    background-color: rgba(255, 255, 255, 0.014);
+
+}
+.img {
+    height: 120px;
+    width: 150px;
+
+   
+}
+.txt{
+    height: 120px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    align-items: center;
+}
+.btn {
+
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+.delete button{
+    margin: 0px 20px;
+    width: 40px;
+    height: 40px;
+}
+.update  button{
+    margin: 0px 20px;
+    width: 40px;
+    height: 40px;
+   
+}
