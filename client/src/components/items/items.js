@@ -1,7 +1,7 @@
 import "../../css/item.css";
-
+import close from "../../assets/close.svg";
+import edit from "../../assets/edit.svg";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Items() {
   return (
@@ -10,14 +10,14 @@ function Items() {
       <div className="txt">
         <div className="title">this is the title</div>
         <div className="btn">
-          <div className="update">
-            <button>
-              <FontAwesomeIcon icon="fa-solid fa-trash-can" />
-            </button>
-          </div>
           <div className="delete">
             <button>
-              <FontAwesomeIcon icon="fa-solid fa-wrench" />
+              <img src={close} alt="close" />
+            </button>
+          </div>
+          <div className="update">
+            <button>
+              <img src={edit} alt="edit" />
             </button>
           </div>
         </div>
