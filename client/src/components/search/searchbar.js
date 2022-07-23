@@ -1,12 +1,12 @@
-import { Search } from "semantic-ui-react";
-import "../../css/style.css";
+import "../../css/searchbar.css";
 
 function Searchbar() {
   return (
     <>
-      <Search placeholder="Search..." className="search" />
+      <input type="text" placeholder="search ..." className="search" />
     </>
   );
 }
 
 export default Searchbar;
+

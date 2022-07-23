@@ -1,12 +1,10 @@
-import './App.css';
-import AppLayout from './pages/AppLayout'
+import "./css/App.css";
+import AppLayout from "./pages/AppLayout";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <AppLayout />
-      </header>
+      <AppLayout />
     </div>
   );
 }

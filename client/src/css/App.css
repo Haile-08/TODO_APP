@@ -1,0 +1,20 @@
+.App {
+  background-color: #353b48;
+  color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 30px;
+  padding: 100px;
+}
+
+.layout{
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
