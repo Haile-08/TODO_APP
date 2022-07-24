@@ -1,6 +1,7 @@
 import Searchbar from "../components/search/searchbar";
 import Items from "../components/items/items";
 import Add_Btn from "../components/add_btn/add_btn";
+import Modalpage from "../components/modal/modalpage";
 
 import "../css/App.css";
 
@@ -13,6 +14,7 @@ function AppLayout() {
       <Searchbar />
       <Items />
       <Add_Btn />
+      <Modalpage />
     </div>
   );
 }

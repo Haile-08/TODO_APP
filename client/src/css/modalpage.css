@@ -1,0 +1,21 @@
+.modal{
+    margin: auto;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #fbc5318e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalcontent{
+    height: 800px;
+    width: 600px;
+    background-color: #fbc531;
+    border-radius: 10px;
+}

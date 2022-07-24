@@ -1,4 +1,5 @@
 .App {
+  height: 80vh;
   background-color: #353b48;
   color: #f5f6fa;
   display: flex;
