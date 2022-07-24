@@ -8,17 +8,57 @@ import "../css/App.css";
 import React, { useState } from "react";
 
 function AppLayout() {
+  const [modaltype, setmodaltype] = useState("");
   const [modal, setModal] = useState(false);
+  const [update, setupadte] = useState(false);
+  const [view, setView] = useState(false);
+  const [post, setPost] = useState(false);
+
   const toggleModal = () => {
     setModal(!modal);
   };
+  const toggleupdate = () => {
+    setupadte(!update);
+  };
+  const toggleview = () => {
+    setView(!view);
+  };
+  const togglepost = () => {
+    setPost(!post);
+  };
+  const settypep = () => {
+    setmodaltype("p");
+  };
+  const settypev = () => {
+    setmodaltype("v");
+  };
+  const settypeu = () => {
+    setmodaltype("u");
+  };
+
   return (
     <div className="layout">
       <h1 className="h">Todo List</h1>
-      {modal && <Modalpage modal={toggleModal} />}
+      {modal && (
+        <Modalpage
+          modal={toggleModal}
+          update={update}
+          updatetog={toggleupdate}
+          view={view}
+          viewtog={toggleview}
+          post={post}
+          posttog={togglepost}
+          type={modaltype}
+        />
+      )}
       <Searchbar />
-      <Items />
-      <Add_Btn modal={toggleModal} />
+      <Items
+        view={toggleview}
+        update={toggleupdate}
+        typev={settypev}
+        typeu={settypeu}
+      />
+      <Add_Btn modal={toggleModal} type={settypep} post={togglepost} />
     </div>
   );
 }

@@ -3,11 +3,11 @@ import Close from "../../close/close";
 import "../../../css/postmodal.css";
 import img from "../../../assets/img.svg";
 
-function PostModal({ modal }) {
+function PostModal({ modal, post, type }) {
   return (
     <div className="postmodalcontainer">
       <div className="closebtncont">
-        <Close modal={modal} />
+        <Close modal={modal} post={post} type={type} />
       </div>
       <div className="posttxt">
         <textarea
@@ -20,7 +20,7 @@ function PostModal({ modal }) {
       <div className="postimginsert">
         <input type="file" id="file" accept="image/*" />
         <label for="file">
-          <img src={img} />
+          <img src={img} alt="img" />
           choose file
         </label>
       </div>

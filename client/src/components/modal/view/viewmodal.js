@@ -3,11 +3,11 @@ import Close from "../../close/close";
 import "../../../css/updatemodal.css";
 import img from "../../../assets/img.jpeg";
 
-function Updatemodal({ modal, update, type }) {
+function Viewmodal({ modal, view, type }) {
   return (
     <div className="updatecontainer">
       <div className="closebtncont">
-        <Close modal={modal} update={update} type={type} />
+        <Close modal={modal} view={view} type={type} />
       </div>
       <div className="updateimg">
         <div className="imgcont">
@@ -15,14 +15,7 @@ function Updatemodal({ modal, update, type }) {
         </div>
       </div>
       <div className="updatetxt">
-        <div className="utxt">
-          <textarea
-            className="postinput"
-            rows="20"
-            cols="68"
-            placeholder="type something .."
-          />
-        </div>
+        <div className="utxt">tex....</div>
       </div>
       <div className="updatebtn">
         <button className="ubtn">Update</button>
@@ -31,4 +24,4 @@ function Updatemodal({ modal, update, type }) {
   );
 }
 
-export default Updatemodal;
+export default Viewmodal;
