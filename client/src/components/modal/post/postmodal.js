@@ -1,13 +1,13 @@
 import React from "react";
-import Add_Btn from "../../add_btn/add_btn";
 import Close from "../../close/close";
 import "../../../css/postmodal.css";
+import img from "../../../assets/img.svg";
 
-function PostModal() {
+function PostModal({ modal }) {
   return (
     <div className="postmodalcontainer">
       <div className="closebtncont">
-        <Close />
+        <Close modal={modal} />
       </div>
       <div className="posttxt">
         <textarea
@@ -18,10 +18,14 @@ function PostModal() {
         />
       </div>
       <div className="postimginsert">
-        <input type="file" id="img" name="img" accept="image/*" />
+        <input type="file" id="file" accept="image/*" />
+        <label for="file">
+          <img src={img} />
+          choose file
+        </label>
       </div>
       <div className="postbtnarea">
-        <Add_Btn />
+        <button className="postbtn">Add</button>
       </div>
     </div>
   );

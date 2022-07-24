@@ -1,10 +1,12 @@
 import React from "react";
 import "../../css/Addbtn.css";
 
-function Add_Btn() {
+function Add_Btn({ modal }) {
   return (
     <>
-      <button className="addbtn">Add</button>
+      <button className="addbtn" onClick={modal}>
+        Add
+      </button>
     </>
   );
 }
