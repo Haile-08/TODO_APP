@@ -1,0 +1,27 @@
+.postmodalcontainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: aqua;
+}
+.closebtncont{
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 50%;
+}
+.posttxt {
+    background-color: blue;
+    padding: 40px 0px;
+    width: 600px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postinput{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    height: auto;
+    padding: 40px;
+}
