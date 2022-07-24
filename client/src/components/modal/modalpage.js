@@ -1,13 +1,13 @@
 import React from "react";
 import "../../css/modalpage.css";
-import PostModal from "./post/postmodal";
+import Updatemodal from "./update/updatemodal";
 
-function Modalpage({ modal }) {
+function Modalpage() {
   return (
     <div className="modal">
       <div className="overlay">
         <div className="modalcontent">
-          <PostModal modal={modal} />
+          <Updatemodal />
         </div>
       </div>
     </div>
