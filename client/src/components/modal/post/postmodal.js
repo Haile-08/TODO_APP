@@ -3,6 +3,7 @@ import Close from "../../close/close";
 import "../../../css/postmodal.css";
 
 
+
 function PostModal({ modal }) {
   return (
     <div className="postmodalcontainer">

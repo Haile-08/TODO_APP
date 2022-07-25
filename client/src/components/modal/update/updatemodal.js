@@ -9,8 +9,8 @@ function Updatemodal({ modal }) {
       <div className="closebtncont">
         <Close modal={modal} />
       </div>
-      <div className="title">
-        <div title="tinfo">
+      <div className="titlec">
+        <div className="ttinfo" title="tinfo">
           <label for="title">Title</label>
           <input type="text" id="title" required></input>
         </div>
@@ -20,7 +20,7 @@ function Updatemodal({ modal }) {
           <textarea
             className="postinput"
             rows="20"
-            cols="68"
+            cols="50"
             placeholder="type something .."
           />
         </div>

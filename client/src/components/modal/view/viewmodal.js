@@ -17,11 +17,8 @@ function Viewmodal({ modal }) {
       <div className="updatetxt">
         <div className="utxt">
           <label>Info</label>
-          <p>tex....</p>
+          <p className="infop">tex....</p>
         </div>
-      </div>
-      <div className="updatebtn">
-        <button className="ubtn">Update</button>
       </div>
     </div>
   );
