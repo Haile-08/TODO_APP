@@ -1,21 +1,9 @@
 import React from "react";
 import "../../css/close.css";
 
-function Close({ modal, view, update, post, type }) {
-  const closehandler = () => {
-    modal();
-    if (type === "u") {
-      update();
-    }
-    if (type === "v") {
-      view();
-    }
-    if (type === "p") {
-      post();
-    }
-  };
+function Close({ modal }) {
   return (
-    <button className="closebtn" onClick={closehandler}>
+    <button className="closebtn" onClick={modal}>
       <p>X</p>
     </button>
   );

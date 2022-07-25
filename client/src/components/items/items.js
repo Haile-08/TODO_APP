@@ -3,31 +3,30 @@ import close from "../../assets/close.svg";
 import edit from "../../assets/edit.svg";
 import React from "react";
 
-function Items({ view, update, typev, typeu }) {
+function Items({ modal, type }) {
   const viewhandler = () => {
-    view();
-    typev();
+    modal();
+    type("v");
   };
   const updatehandler = () => {
-    update();
-    typeu();
+    modal();
+    type("u");
   };
   return (
-    <div className="container" onClick={viewhandler}>
-      <div className="img"></div>
-      <div className="txt">
-        <div className="title">this is the title</div>
-        <div className="btn">
-          <div className="delete">
-            <button>
-              <img src={close} alt="close" />
-            </button>
-          </div>
-          <div className="update">
-            <button onClick={updatehandler}>
-              <img src={edit} alt="edit" />
-            </button>
-          </div>
+    <div className="container">
+      <div className="title" onClick={viewhandler}>
+        this is the title
+      </div>
+      <div className="btn">
+        <div className="delete">
+          <button>
+            <img src={close} alt="close" />
+          </button>
+        </div>
+        <div className="update">
+          <button onClick={updatehandler}>
+            <img src={edit} alt="edit" />
+          </button>
         </div>
       </div>
     </div>

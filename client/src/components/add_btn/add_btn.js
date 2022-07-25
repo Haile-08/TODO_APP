@@ -1,11 +1,10 @@
 import React from "react";
 import "../../css/Addbtn.css";
 
-function Add_Btn({ modal, type, post }) {
+function AddBtn({ modal, type }) {
   const actionhandeler = () => {
-    type();
+    type("p");
     modal();
-    post();
   };
   return (
     <>
@@ -15,4 +14,4 @@ function Add_Btn({ modal, type, post }) {
     </>
   );
 }
-export default Add_Btn;
+export default AddBtn;

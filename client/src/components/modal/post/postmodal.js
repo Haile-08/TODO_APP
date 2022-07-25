@@ -1,13 +1,19 @@
 import React from "react";
 import Close from "../../close/close";
 import "../../../css/postmodal.css";
-import img from "../../../assets/img.svg";
 
-function PostModal({ modal, post, type }) {
+
+function PostModal({ modal }) {
   return (
     <div className="postmodalcontainer">
       <div className="closebtncont">
-        <Close modal={modal} post={post} type={type} />
+        <Close modal={modal} />
+      </div>
+      <div className="titlecontainer">
+        <div className="ptinfo">
+          <label for="title">Title</label>
+          <input type="text" id="title" required></input>
+        </div>
       </div>
       <div className="posttxt">
         <textarea
@@ -17,13 +23,7 @@ function PostModal({ modal, post, type }) {
           placeholder="type something .."
         />
       </div>
-      <div className="postimginsert">
-        <input type="file" id="file" accept="image/*" />
-        <label for="file">
-          <img src={img} alt="img" />
-          choose file
-        </label>
-      </div>
+
       <div className="postbtnarea">
         <button className="postbtn">Add</button>
       </div>

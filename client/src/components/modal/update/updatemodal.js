@@ -1,17 +1,18 @@
 import React from "react";
 import Close from "../../close/close";
 import "../../../css/updatemodal.css";
-import img from "../../../assets/img.jpeg";
 
-function Updatemodal({ modal, update, type }) {
+
+function Updatemodal({ modal }) {
   return (
     <div className="updatecontainer">
       <div className="closebtncont">
-        <Close modal={modal} update={update} type={type} />
+        <Close modal={modal} />
       </div>
-      <div className="updateimg">
-        <div className="imgcont">
-          <img src={img} alt="j" />
+      <div className="title">
+        <div title="tinfo">
+          <label for="title">Title</label>
+          <input type="text" id="title" required></input>
         </div>
       </div>
       <div className="updatetxt">
