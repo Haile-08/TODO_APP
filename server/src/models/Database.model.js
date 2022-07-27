@@ -8,7 +8,7 @@ async function AddNewItem(items) {
 }
 
 async function FindItemById(id) {
-  const item = await Item.find({ id: id });
+  const item = await Item.findOne({ id: id });
   return item;
 }
 async function UpdateItemById(body) {

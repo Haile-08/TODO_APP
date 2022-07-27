@@ -1,5 +1,9 @@
-function httpUpdateItem(req, res) {
-  return res.status(200).json({ name: "updated item" });
+const { UpdateItemById } = require("../../models/Database.model");
+
+function httpUpdateController(req, res) {
+  const body = req.body;
+  UpdateItemById(body);
+  res.status(200).json({ name: "success" });
 }
 
-module.exports = httpUpdateItem;
+module.exports = httpUpdateController;
