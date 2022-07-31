@@ -6,6 +6,9 @@ import Viewmodal from "../components/modal/view/viewmodal";
 import PostModal from "../components/modal/post/postmodal";
 import Updatemodal from "../components/modal/update/updatemodal";
 
+
+import { httpGetlist } from "../hooks/requests";
+
 import "../css/App.css";
 
 import React, { useState } from "react";
@@ -27,21 +30,30 @@ function AppLayout() {
   }
 
   return (
-    <div className="layout">
-      <h1 className="h">Todo List</h1>
-      {modal && (
-        <Modalpage>
-          {console.log(modalType)}
-          {modalType === "u" && <Updatemodal modal={toggleModal} />}
-          {modalType === "v" && <Viewmodal modal={toggleModal} />}
-          {modalType === "p" && <PostModal modal={toggleModal} />}
-        </Modalpage>
-      )}
-      <Searchbar />
-      <Items modal={toggleModal} type={ModalTypeChange} />
+    <>
+      <div className="layout">
+        <h1 className="h">Todo List</h1>
+        {modal && (
+          <Modalpage>
+            {console.log(modalType)}
+            {modalType === "u" && <Updatemodal modal={toggleModal} />}
+            {modalType === "v" && <Viewmodal modal={toggleModal} />}
+            {modalType === "p" && <PostModal modal={toggleModal} />}
+          </Modalpage>
+        )}
+        <Searchbar />
 
-      <AddBtn modal={toggleModal} type={ModalTypeChange} />
-    </div>
+        {Object.values(httpGetlist).map((items, index) => (
+          <Items
+            modal={toggleModal}
+            type={ModalTypeChange}
+            title={items.title}
+            body={items.body}
+          />
+        ))}
+        <AddBtn modal={toggleModal} type={ModalTypeChange} />
+      </div>
+    </>
   );
 }
 

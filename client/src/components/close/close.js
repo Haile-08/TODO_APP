@@ -5,7 +5,7 @@ import close from "../../assets/clo.svg";
 function Close({ modal }) {
   return (
     <button className="closebtn" onClick={modal}>
-      <img src={close}></img>
+      <img src={close} alt="close"></img>
     </button>
   );
 }

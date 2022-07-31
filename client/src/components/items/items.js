@@ -3,7 +3,7 @@ import close from "../../assets/close.svg";
 import edit from "../../assets/edit.svg";
 import React from "react";
 
-function Items({ modal, type }) {
+function Items({ modal, type, id, title, body }) {
   const viewhandler = () => {
     modal();
     type("v");
@@ -15,7 +15,7 @@ function Items({ modal, type }) {
   return (
     <div className="container">
       <div className="title" onClick={viewhandler}>
-        this is the title
+        {title}
       </div>
       <div className="btn">
         <div className="delete">

@@ -9,7 +9,7 @@ const UpdateRouter = require("./update/update.router");
 const api = express.Router();
 
 api.use("/search", searchitem);
-api.use("update", UpdateRouter);
+api.use("/update", UpdateRouter);
 api.use("/view", viewRouter);
 api.use("/delete", searchRouter);
 api.use("/add", AddNewRouter);

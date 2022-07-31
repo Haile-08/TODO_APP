@@ -4,6 +4,6 @@ const httpDeleteItem = require("../../controllers/delete/delete.controller");
 
 const deleteRouter = express.Router();
 
-deleteRouter.delete("/", httpDeleteItem);
+deleteRouter.delete("/:id", httpDeleteItem);
 
 module.exports = deleteRouter;
