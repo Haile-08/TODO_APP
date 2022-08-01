@@ -1,8 +1,12 @@
 import React from "react";
 import Close from "../../close/close";
 import "../../../css/updatemodal.css";
+import {httpGetSearch} from '../../../hooks/requests'
 
-function Viewmodal({ modal }) {
+function Viewmodal({ modal,id }) {
+  
+  let items = httpGetSearch(id);
+
   return (
     <div className="updatecontainer">
       <div className="closebtncont">
@@ -11,13 +15,13 @@ function Viewmodal({ modal }) {
       <div className="updateimg">
         <div className="imgcont">
           <label>Title</label>
-          <p>.......</p>
+          <p>{items.title}</p>
         </div>
       </div>
       <div className="updatetxt">
         <div className="utxt">
           <label>Info</label>
-          <p className="infop">tex....</p>
+          <p className="infop">{items.body}</p>
         </div>
       </div>
     </div>

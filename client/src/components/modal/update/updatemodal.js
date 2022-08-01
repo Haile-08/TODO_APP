@@ -1,9 +1,10 @@
 import React from "react";
 import Close from "../../close/close";
 import "../../../css/updatemodal.css";
-
+import { useState } from "react";
 
 function Updatemodal({ modal }) {
+  const [update,setupdate] = useState({})
   return (
     <div className="updatecontainer">
       <div className="closebtncont">

@@ -21,6 +21,7 @@ import React, { useState } from "react";
 function AppLayout() {
   const [modal, setModal] = useState(false);
   const [modalType, setModalType] = useState("");
+  const [id,setid] = useState(0)
 
 
   const toggleModal = () => {
@@ -35,7 +36,29 @@ function AppLayout() {
     <>
       <div className="layout">
         <h1 className="h">Todo List</h1>
-            <Modalpage modal={modal} modalType={modalType} toggleModal={toggleModal}/>
+        {modal && (
+            <Modalpage>
+              {modalType === "u" && (
+                <Updatemodal
+                  
+                  modal={toggleModal}
+                />
+              )}
+              {modalType === "v" && (
+                <Viewmodal   
+                   
+                  modal={toggleModal}
+                  id={id}
+                />
+              )}
+              {modalType === "p" && (
+                <PostModal 
+                   
+                  modal={toggleModal}
+                />
+              )}
+            </Modalpage>
+          )}
           
         <Searchbar searchfun={httpGetSearch}/>
 
@@ -43,6 +66,7 @@ function AppLayout() {
           <Items
             modal={toggleModal}
             type={ModalTypeChange}
+            setid={setid}
             id={index}
             title={items[1]}
             body={items[2]}
