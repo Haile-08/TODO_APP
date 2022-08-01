@@ -5,6 +5,7 @@ const API_URL = "";
 //get search result
 async function httpGetSearch(id) {
   //get the search result of an item
+  console.log(id)
   let searchitem = {};
   await axios
     .get(`${API_URL}/search/${id}`)

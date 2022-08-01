@@ -7,7 +7,12 @@ import PostModal from "../components/modal/post/postmodal";
 import Updatemodal from "../components/modal/update/updatemodal";
 
 
-import { httpGetlist } from "../hooks/requests";
+import {  
+  httpGetSearch,
+  httpGetlist,
+  httpDeleteItem,
+  httpUpdateItem,
+  httpAddItem, } from "../hooks/requests";
 
 import "../css/App.css";
 
@@ -17,6 +22,7 @@ function AppLayout() {
   const [modal, setModal] = useState(false);
   const [modalType, setModalType] = useState("");
 
+
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -24,31 +30,22 @@ function AppLayout() {
     setModalType(name);
   };
 
-  console.log(modal);
-  {
-    console.log(modalType);
-  }
 
   return (
     <>
       <div className="layout">
         <h1 className="h">Todo List</h1>
-        {modal && (
-          <Modalpage>
-            {console.log(modalType)}
-            {modalType === "u" && <Updatemodal modal={toggleModal} />}
-            {modalType === "v" && <Viewmodal modal={toggleModal} />}
-            {modalType === "p" && <PostModal modal={toggleModal} />}
-          </Modalpage>
-        )}
-        <Searchbar />
+            <Modalpage modal={modal} modalType={modalType} toggleModal={toggleModal}/>
+          
+        <Searchbar searchfun={httpGetSearch}/>
 
         {Object.values(httpGetlist).map((items, index) => (
           <Items
             modal={toggleModal}
             type={ModalTypeChange}
-            title={items.title}
-            body={items.body}
+            id={index}
+            title={items[1]}
+            body={items[2]}
           />
         ))}
         <AddBtn modal={toggleModal} type={ModalTypeChange} />
