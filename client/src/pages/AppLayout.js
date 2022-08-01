@@ -11,8 +11,7 @@ import {
   httpGetSearch,
   httpGetlist,
   httpDeleteItem,
-  httpUpdateItem,
-  httpAddItem, } from "../hooks/requests";
+ } from "../hooks/requests";
 
 import "../css/App.css";
 
