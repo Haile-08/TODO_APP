@@ -6,6 +6,5 @@ const searchRouter = express.Router();
 
 searchRouter.get("/:id", httpSearchItem);
 
-//search backend
 
 module.exports = searchRouter;

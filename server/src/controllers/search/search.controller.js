@@ -1,13 +1,13 @@
-const FindItemById = require("../../models/Database.model");
+const Items = require("../../models/Items.schema");
 
 async function httpSearchItem(req, res) {
-  const itemsId = Number(req.params.id);
+  const { id } = req.params;
   try {
-    const itemobj = await FindItemById(itemsId);
+    const itemobj = await Items.find({ id: `${id}` });
     res.status(200).json(itemobj);
   } catch (err) {
     res.status(400).json({
-      err: "not benig catched",
+      err: err.message,
     });
   }
 }

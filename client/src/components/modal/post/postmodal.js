@@ -1,13 +1,12 @@
 import React from "react";
 import Close from "../../close/close";
 import "../../../css/postmodal.css";
-import {httpGetlist,httpAddItem } from '../../../hooks/requests';
+import  {httpGetlist,httpAddItem } from '../../../hooks/requests';
 import  { useState,useRef } from "react";
 
 
 
 function PostModal({ modal }) {
-  const 
   const [add,setadd] = useState({
     id: 0,
     title:'',

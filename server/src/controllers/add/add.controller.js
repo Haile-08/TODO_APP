@@ -1,15 +1,19 @@
-const { AddNewItem } = require("../../models/Database.model");
+const Items = require("../../models/Items.schema");
 
 async function httpAddNewItem(req, res) {
-  const items = req.body;
+  const { id, title, body } = req.body;
 
-  if (!items.id || !items.title || !items.body) {
-    return res.status(400).json({
-      error: "missing data",
-    });
+  try {
+    if (!id || !title || !body) {
+      return res.status(400).json({
+        error: "missing data",
+      });
+    }
+    const items = await Items.create({ id, title, body });
+    return res.status(201).json(items);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
-  await AddNewItem(items);
-  return res.status(201).json(items);
 }
 
 module.exports = httpAddNewItem;
