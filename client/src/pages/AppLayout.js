@@ -17,7 +17,7 @@ function AppLayout() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/v1/view")
+      .get("/view")
       .then((Response) => {
         setlist(Response.data);
       })
@@ -25,6 +25,7 @@ function AppLayout() {
         console.log(err);
       });
   }, []);
+ 
 
   const toggleModal = () => {
     setModal(!modal);

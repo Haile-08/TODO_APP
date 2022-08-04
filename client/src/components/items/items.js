@@ -2,6 +2,7 @@ import "../../css/item.css";
 import close from "../../assets/close.svg";
 import edit from "../../assets/edit.svg";
 import React from "react";
+const axios = require("axios");
 
 function Items({ modal, type, id, title, setid }) {
   const viewhandler = () => {
@@ -13,6 +14,11 @@ function Items({ modal, type, id, title, setid }) {
     modal();
     type("u");
   };
+  const handledelete = (id) => {
+    axios.delete(`/delete/${id}`).then(function() {
+      console.log("deleted sucessfully");
+    });
+  };
   return (
     <div className="container">
       <div className="title" onClick={viewhandler}>
@@ -20,7 +26,7 @@ function Items({ modal, type, id, title, setid }) {
       </div>
       <div className="btn">
         <div className="delete">
-          <button>
+          <button onClick={handledelete(id)}>
             <img src={close} alt="close" />
           </button>
         </div>
