@@ -1,11 +1,11 @@
 const axios = require("axios");
 //Api Adress
-const API_URL = "";
+const API_URL = "http://localhost:8000/v1";
 
 //get search result
 async function httpGetSearch(id) {
   //get the search result of an item
-  console.log(id)
+  console.log(id);
   let searchitem = {};
   await axios
     .get(`${API_URL}/search/${id}`)
@@ -27,6 +27,7 @@ async function httpGetlist() {
   //get all the list off item result
   try {
     const response = await axios.get(`${API_URL}/view`);
+    console.log(response);
     return response;
   } catch (err) {
     console.log(err);

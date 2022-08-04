@@ -3,11 +3,11 @@ import close from "../../assets/close.svg";
 import edit from "../../assets/edit.svg";
 import React from "react";
 
-function Items({ modal, type, id, title, body, setid }) {
+function Items({ modal, type, id, title, setid }) {
   const viewhandler = () => {
     modal();
     type("v");
-    setid(id)
+    setid(id);
   };
   const updatehandler = () => {
     modal();
